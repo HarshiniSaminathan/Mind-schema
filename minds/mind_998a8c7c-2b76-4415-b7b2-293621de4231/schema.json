@@ -1,0 +1,69 @@
+{
+    "_id": "998a8c7c-2b76-4415-b7b2-293621de4231",
+    "name": "Mind schema",
+    "description": "Git versioning schema 9",
+    "folder_name": "Learning",
+    "default_llm_model": "llama3-8b-8192",
+    "default_accelerator": "groq",
+    "agents": [
+        {
+            "id": "AboutPython__001",
+            "input": {
+                "prompt": "What is Python",
+                "llm_model": "fireworks_llama-v3p1-8b-instruct"
+            },
+            "meta": {},
+            "name": "About Python",
+            "operator": "OpenSearch",
+            "output": {
+                "type": "markdown",
+                "content": "string"
+            },
+            "parent_agents": []
+        },
+        {
+            "id": "ExplainationOfAboutPython__002",
+            "input": {
+                "prompt": "Explain the below output detailedly : $AboutPython__001.output.content ",
+                "llm_model": "fireworks_llama-v3p1-70b-instruct"
+            },
+            "meta": {},
+            "name": "Explaination of About Python",
+            "operator": "OpenSearch",
+            "output": {
+                "type": "markdown",
+                "content": "string"
+            },
+            "parent_agents": [
+                "AboutPython__001"
+            ]
+        }
+    ],
+    "sequence": [
+        [
+            "AboutPython__001"
+        ],
+        [
+            "ExplainationOfAboutPython__002"
+        ]
+    ],
+    "request": {
+        "arguments": []
+    },
+    "response_structure": {
+        "api": {},
+        "ui": {
+            "type": "tabs",
+            "tabs": [],
+            "content": {}
+        }
+    },
+    "created_at": "2025-10-22 05:17:53.073000",
+    "modified_at": "2025-10-22 05:17:53.073000",
+    "isOrg": false,
+    "teams": [],
+    "sharedWith": [],
+    "reasoning": "",
+    "context": {},
+    "schedules": null
+}
