@@ -1,7 +1,7 @@
 {
     "_id": "998a8c7c-2b76-4415-b7b2-293621de4231",
     "name": "Mind schema",
-    "description": "Git versioning schema 2",
+    "description": "Git versioning schema 2.1",
     "folder_name": "Learning",
     "default_llm_model": "llama3-8b-8192",
     "default_accelerator": "groq",
