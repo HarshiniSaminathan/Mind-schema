@@ -1,0 +1,27 @@
+{
+    "folder_name": "Learning",
+    "name": "Debug Mind",
+    "description": "Learning Mind",
+    "agents": [
+        {
+            "id": "AboutPython__001",
+            "input": {
+                "prompt": "What is Python",
+                "llm_model": "fireworks_llama-v3p1-8b-instruct"
+            },
+            "meta": {},
+            "name": "About Python",
+            "operator": "OpenSearch",
+            "output": {
+                "type": "markdown",
+                "content": "string"
+            },
+            "parent_agents": []
+        }
+    ],
+    "sequence": [
+        [
+            "AboutPython__001"
+        ]
+    ]
+}
