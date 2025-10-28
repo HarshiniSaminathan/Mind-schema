@@ -1,0 +1,242 @@
+{
+    "_id": "09d423bb-a041-4653-b005-8e49276719bf",
+    "name": "Hotel Analysis updated ",
+    "description": "Analyse of hotel details ",
+    "folder_name": "Learning",
+    "default_llm_model": "llama3-8b-8192",
+    "default_accelerator": "groq",
+    "agents": [
+        {
+            "id": "FetchHotelDetailsFromTable__001",
+            "input": {
+                "sql": "SELECT * FROM hotel_template_latestxlsx_e8d44810\n\n",
+                "dataset": "d1acb0cf-0634-4c97-a466-5c40d877973a",
+                "llm_model": ""
+            },
+            "meta": {},
+            "name": "Fetch Hotel details from table",
+            "operator": "SQLExecution",
+            "output": {
+                "type": "table",
+                "content": "string"
+            },
+            "parent_agents": []
+        },
+        {
+            "id": "BasicHotelInformationFromDataSet__002",
+            "input": {
+                "prompt": "Based on the below table data , analyse the hotel details and explain the basic of hotel details . \n\n$FetchHotelDetailsFromTable__001.output.content",
+                "dataframe": "$FetchHotelDetailsFromTable__001.output.content",
+                "llm_model": "fireworks_llama-v3p1-70b-instruct"
+            },
+            "meta": {},
+            "name": "Basic hotel information from data set ",
+            "operator": "TableToTextSummary",
+            "output": {
+                "type": "markdown",
+                "content": "string"
+            },
+            "parent_agents": [
+                "FetchHotelDetailsFromTable__001"
+            ]
+        },
+        {
+            "id": "AnalyseTheHotelDataSet__003",
+            "input": {
+                "dataframe": "$FetchHotelDetailsFromTable__001.output.content",
+                "prompt": "Based on the below data set , Analyse the \ndata set and give me a graphical view based on the hotels name \n$FetchHotelDetailsFromTable__001.output.content",
+                "llm_model": "fireworks_llama-v3p1-70b-instruct"
+            },
+            "meta": {},
+            "name": "Analyse the hotel data set",
+            "operator": "TableToGraphV3",
+            "output": {
+                "type": "recharts",
+                "content": "string"
+            },
+            "parent_agents": [
+                "FetchHotelDetailsFromTable__001"
+            ]
+        },
+        {
+            "id": "AnalyseTheHotelBasedOnClusterAndTheatre__004",
+            "input": {
+                "dataframe": "$FetchHotelDetailsFromTable__001.output.content",
+                "prompt": "Based on the data set given , Analyse based on cluster and theatre and give me a graphical representation \n\n$FetchHotelDetailsFromTable__001.output.content",
+                "llm_model": "fireworks_llama-v3p1-70b-instruct"
+            },
+            "meta": {},
+            "name": "Analyse the hotel based on Cluster and Theatre",
+            "operator": "TableToGraphV3",
+            "output": {
+                "type": "recharts",
+                "content": "string"
+            },
+            "parent_agents": [
+                "FetchHotelDetailsFromTable__001"
+            ]
+        },
+        {
+            "id": "FetchEnquiryDetails__005",
+            "input": {
+                "sql": "SELECT * FROM enquiry_report_20250603_to_20251016xlsx_cdcdc082",
+                "dataset": "d8295efb-4eee-444e-bd39-f8092dcf6a92",
+                "llm_model": ""
+            },
+            "meta": {},
+            "name": "Fetch Enquiry Details",
+            "operator": "SQLExecution",
+            "output": {
+                "type": "table",
+                "content": "string"
+            },
+            "parent_agents": []
+        },
+        {
+            "id": "EnquiryAnalysis__006",
+            "input": {
+                "dataframe": "$FetchEnquiryDetails__005.output.content",
+                "prompt": "Based on the below data set , Analyse the hotel enquiry and provide me a graphical view  based on the user enquiry for the particular hotels and those informations\n\n$FetchEnquiryDetails__005.output.content",
+                "llm_model": "fireworks_llama-v3p1-70b-instruct"
+            },
+            "meta": {},
+            "name": "Enquiry Analysis updated",
+            "operator": "TableToGraphV3",
+            "output": {
+                "type": "recharts",
+                "content": "string"
+            },
+            "parent_agents": [
+                "FetchEnquiryDetails__005"
+            ]
+        },
+        {
+            "id": "CompareEnquiryAndHotel__007",
+            "input": {
+                "dataframe": "$FetchHotelDetailsFromTable__001.output.content\n$FetchEnquiryDetails__005.output.content\n",
+                "prompt": "Based on the two below data sets I need to analyse the enquiry for the hotels and otel details , and I need a proper analyse in the graphical veiw .\n\n$FetchHotelDetailsFromTable__001.output.content\n$FetchEnquiryDetails__005.output.content",
+                "llm_model": "fireworks_llama-v3p1-70b-instruct"
+            },
+            "meta": {},
+            "name": "Compare enquiry and hotel",
+            "operator": "TableToGraphV3",
+            "output": {
+                "type": "recharts",
+                "content": "string"
+            },
+            "parent_agents": [
+                "FetchHotelDetailsFromTable__001",
+                "FetchEnquiryDetails__005"
+            ]
+        },
+        {
+            "id": "AiAnayzer__008",
+            "input": {
+                "prompt": "Based on the below generated output analyze and give a table wise comparision of enquiry and also hotel details \n\n$AnalyseTheHotelDataSet__003.output.content\n$FetchEnquiryDetails__005.output.content",
+                "rows": "3",
+                "llm_model": "fireworks_llama-v3p1-70b-instruct"
+            },
+            "meta": {},
+            "name": "AI anayzer",
+            "operator": "SyntheticTableGenerator",
+            "output": {
+                "content": "markdown"
+            },
+            "parent_agents": [
+                "AnalyseTheHotelDataSet__003",
+                "FetchEnquiryDetails__005"
+            ]
+        }
+    ],
+    "sequence": [
+        [
+            "FetchHotelDetailsFromTable__001",
+            "FetchEnquiryDetails__005"
+        ],
+        [
+            "BasicHotelInformationFromDataSet__002",
+            "AnalyseTheHotelDataSet__003",
+            "AnalyseTheHotelBasedOnClusterAndTheatre__004",
+            "EnquiryAnalysis__006",
+            "CompareEnquiryAndHotel__007"
+        ],
+        [
+            "AiAnayzer__008"
+        ]
+    ],
+    "request": {
+        "arguments": []
+    },
+    "response_structure": {
+        "api": {},
+        "ui": {
+            "tabs": [
+                "Hotel Details Dashboard & Enquiry Dashboard "
+            ],
+            "content": {
+                "Hotel Details Dashboard & Enquiry Dashboard ": [
+                    {
+                        "type": "markdown",
+                        "content": "$BasicHotelInformationFromDataSet__002.output.content",
+                        "style": {
+                            "grid": 12
+                        }
+                    },
+                    {
+                        "type": "echarts",
+                        "content": "\n$AnalyseTheHotelDataSet__003.output.content",
+                        "style": {
+                            "grid": {
+                                "label": "12",
+                                "value": 12
+                            }
+                        }
+                    },
+                    {
+                        "type": "echarts",
+                        "content": "$AnalyseTheHotelBasedOnClusterAndTheatre__004.output.content",
+                        "style": {
+                            "grid": {
+                                "label": "12",
+                                "value": 12
+                            }
+                        }
+                    },
+                    {
+                        "content": "$EnquiryAnalysis__006.output.content",
+                        "type": "markdown",
+                        "grid": 12,
+                        "style": {
+                            "grid": 12
+                        }
+                    },
+                    {
+                        "content": "$CompareEnquiryAndHotel__007.output.content",
+                        "type": "markdown",
+                        "grid": 12,
+                        "style": {
+                            "grid": 12
+                        }
+                    },
+                    {
+                        "content": "$AiAnayzer__008.output.content",
+                        "type": "markdown",
+                        "grid": 12,
+                        "style": {
+                            "grid": 12
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "created_at": "2025-10-17 09:21:02.680000",
+    "modified_at": "2025-10-17 09:21:02.680000",
+    "isOrg": false,
+    "teams": [],
+    "sharedWith": [],
+    "reasoning": "",
+    "context": {},
+    "schedules": [],
+    "is_git_synced": false
+}
