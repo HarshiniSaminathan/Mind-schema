@@ -1,7 +1,7 @@
 {
     "_id": "09d423bb-a041-4653-b005-8e49276719bf",
     "name": "Hotel Analysis",
-    "description": "Analyse of hotel details  ",
+    "description": "Analyse of hotel details Updated Analysis",
     "folder_name": "Learning",
     "default_llm_model": "llama3-8b-8192",
     "default_accelerator": "groq",
