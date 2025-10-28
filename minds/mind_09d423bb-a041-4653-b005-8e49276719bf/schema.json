@@ -1,6 +1,6 @@
 {
     "_id": "09d423bb-a041-4653-b005-8e49276719bf",
-    "name": "Hotel Analysis updated ",
+    "name": "Hotel Analysis",
     "description": "Analyse of hotel details ",
     "folder_name": "Learning",
     "default_llm_model": "llama3-8b-8192",
@@ -100,7 +100,7 @@
                 "llm_model": "fireworks_llama-v3p1-70b-instruct"
             },
             "meta": {},
-            "name": "Enquiry Analysis updated",
+            "name": "Enquiry Analysis",
             "operator": "TableToGraphV3",
             "output": {
                 "type": "recharts",
