@@ -1,7 +1,7 @@
 {
     "_id": "1cea406c-98ad-4448-a447-902a30eb27e2",
     "name": "Train",
-    "description": "This mind will answer any queries related to trains only",
+    "description": "This mind will answer any queries related to trains",
     "folder_name": "Learning",
     "default_llm_model": "llama3-8b-8192",
     "default_accelerator": "groq",
