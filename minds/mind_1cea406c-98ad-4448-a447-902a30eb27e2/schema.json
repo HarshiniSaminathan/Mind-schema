@@ -27,6 +27,7 @@
             "Opensearch__001"
         ]
     ],
+    "owner": "29f01833d8817ee7104807460c61914942a7f758da7be4941b7a3835e6c69cb2",
     "request": {
         "arguments": [
             {
@@ -45,13 +46,13 @@
             "content": {}
         }
     },
-    "created_at": "2025-10-27 06:55:31.197000",
-    "modified_at": "2025-10-27 06:55:31.197000",
+    "created_at": "2025-10-29T09:14:18.668000",
+    "modified_at": "2025-10-29T09:14:18.668000",
     "isOrg": false,
     "teams": [],
     "sharedWith": [],
     "reasoning": "",
     "context": {},
     "schedules": null,
-    "is_git_synced": false
+    "is_git_synced": true
 }
