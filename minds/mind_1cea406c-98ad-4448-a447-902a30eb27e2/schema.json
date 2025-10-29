@@ -1,0 +1,57 @@
+{
+    "_id": "1cea406c-98ad-4448-a447-902a30eb27e2",
+    "name": "Train",
+    "description": "This mind will answer any queries related to trains",
+    "folder_name": "Learning",
+    "default_llm_model": "llama3-8b-8192",
+    "default_accelerator": "groq",
+    "agents": [
+        {
+            "id": "Opensearch__001",
+            "input": {
+                "prompt": "## Instructions are here:\n\n\nYou context is only about trains. \nIf the user asks anything else you must respond with \"sorry i don't know anything about the topic. However i would help you with train related information\"\n\n\nYour's question:\n$args.user_query",
+                "llm_model": "fireworks_llama-v3p1-8b-instruct"
+            },
+            "meta": {},
+            "name": "OpenSearch",
+            "operator": "OpenSearch",
+            "output": {
+                "type": "markdown",
+                "content": "string"
+            },
+            "parent_agents": []
+        }
+    ],
+    "sequence": [
+        [
+            "Opensearch__001"
+        ]
+    ],
+    "request": {
+        "arguments": [
+            {
+                "name": "user_query",
+                "description": "User's query",
+                "required": true,
+                "type": "string"
+            }
+        ]
+    },
+    "response_structure": {
+        "api": {},
+        "ui": {
+            "type": "tabs",
+            "tabs": [],
+            "content": {}
+        }
+    },
+    "created_at": "2025-10-27 06:55:31.197000",
+    "modified_at": "2025-10-27 06:55:31.197000",
+    "isOrg": false,
+    "teams": [],
+    "sharedWith": [],
+    "reasoning": "",
+    "context": {},
+    "schedules": null,
+    "is_git_synced": false
+}
