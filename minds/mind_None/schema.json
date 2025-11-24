@@ -1,0 +1,53 @@
+{
+    "id": null,
+    "user_id": null,
+    "name": "get email",
+    "description": "get email",
+    "folder_name": "Harshan",
+    "agents": [
+        {
+            "id": "Test__001",
+            "input": {
+                "connection_id": "87d30cba5e6809e2423f15f11f295fe7",
+                "subject": "hello",
+                "from": "abdulshaik@param.network",
+                "to": "shriharshan@param.network",
+                "llm_model": "fireworks_llama-v3p1-70b-instruct"
+            },
+            "meta": {},
+            "name": "test",
+            "operator": "GetEmailsByQuery",
+            "output": {
+                "type": "json",
+                "content": "array"
+            },
+            "parent_agents": []
+        }
+    ],
+    "tags": [],
+    "is_public": false,
+    "settings": {},
+    "template_id": null,
+    "default_llm_model": null,
+    "default_accelerator": null,
+    "sequence": [
+        [
+            "Test__001"
+        ]
+    ],
+    "request": {},
+    "response_structure": {},
+    "created_at": null,
+    "modified_at": null,
+    "isOrg": false,
+    "teams": [],
+    "sharedWith": [],
+    "is_git_synced": false,
+    "type": null,
+    "reasoning": null,
+    "context": {},
+    "schedules": null,
+    "mind_type": null,
+    "schedule": null,
+    "_id": null
+}
