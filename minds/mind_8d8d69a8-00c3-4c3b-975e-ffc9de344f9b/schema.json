@@ -1,0 +1,46 @@
+{
+    "id": null,
+    "user_id": null,
+    "name": "testing mind orch",
+    "description": "testing mind orch",
+    "folder_name": "default",
+    "agents": [
+        {
+            "id": "mind_orchestrator",
+            "name": "testing mind orch",
+            "operator": "Orchestrator",
+            "input": {
+                "description": "testing mind orch",
+                "chat_system_prompt": "testing mind orch testing mind orch",
+                "voice_system_prompt": ""
+            },
+            "parent_agents": []
+        }
+    ],
+    "tags": [],
+    "is_public": false,
+    "settings": {},
+    "template_id": null,
+    "default_llm_model": null,
+    "default_accelerator": null,
+    "sequence": [
+        [
+            "mind_orchestrator"
+        ]
+    ],
+    "owner": null,
+    "request": {},
+    "response_structure": {},
+    "created_at": null,
+    "modified_at": null,
+    "isOrg": false,
+    "teams": [],
+    "sharedWith": [],
+    "is_git_synced": false,
+    "type": "mind_orchestrator",
+    "reasoning": null,
+    "context": {},
+    "schedules": null,
+    "mind_type": null,
+    "schedule": null
+}
