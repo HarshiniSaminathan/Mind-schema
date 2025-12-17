@@ -1,21 +1,40 @@
 {
-    "id": null,
+    "id": "4fa9e6ef-3f98-4cea-a489-f75965f42957",
     "user_id": null,
     "name": "test for share v2",
     "description": "test desc",
-    "folder_name": "test folder",
+    "folder_name": "default",
     "agents": [
         {
-            "id": "mind_orchestrator",
+            "id": "test for share v2",
             "name": "test for share v2",
             "operator": "Orchestrator",
             "input": {
                 "description": "test desc",
+                "voice_provider": "hume",
                 "chat_system_prompt": "hello chat",
-                "voice_system_prompt": "hello voice chat",
-                "voice_provider": "hume"
+                "voice_system_prompt": "hello voice chat"
             },
             "parent_agents": []
+        },
+        {
+            "id": "Mind1__001",
+            "name": "mind1",
+            "operator": "SubAgent",
+            "input": {
+                "mind": "b00b5dd6-a906-40a7-9a90-16eeddd0c8fb",
+                "description": "test mind desc",
+                "llm_model": ""
+            },
+            "parent_agents": [
+                "test for share v2"
+            ],
+            "isNew": true,
+            "output": {
+                "type": "markdown",
+                "content": "string"
+            },
+            "meta": {}
         }
     ],
     "tags": [],
@@ -26,7 +45,10 @@
     "default_accelerator": null,
     "sequence": [
         [
-            "mind_orchestrator"
+            "test for share v2"
+        ],
+        [
+            "Mind1__001"
         ]
     ],
     "owner": null,
@@ -43,5 +65,6 @@
     "context": {},
     "schedules": null,
     "mind_type": null,
-    "schedule": null
+    "schedule": null,
+    "_id": "4fa9e6ef-3f98-4cea-a489-f75965f42957"
 }
