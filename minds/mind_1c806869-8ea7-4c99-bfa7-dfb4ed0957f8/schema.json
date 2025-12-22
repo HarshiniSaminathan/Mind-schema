@@ -1,0 +1,64 @@
+{
+    "id": "1c806869-8ea7-4c99-bfa7-dfb4ed0957f8",
+    "user_id": null,
+    "name": "Mind orchestration",
+    "description": "Mind orchestration Development",
+    "folder_name": "default",
+    "agents": [
+        {
+            "id": "Mind orchestration",
+            "name": "Mind orchestration",
+            "operator": "Orchestrator",
+            "input": {
+                "description": "Mind orchestration Development",
+                "voice_provider": "hume",
+                "chat_system_prompt": " ",
+                "voice_system_prompt": " "
+            },
+            "parent_agents": []
+        },
+        {
+            "id": "MindDevelopment__001",
+            "name": "Mind development",
+            "operator": "SubAgent",
+            "input": {
+                "mind": "1282ca52-6495-4a61-a5e3-51430503a334",
+                "description": "",
+                "model": "groq_openai/gpt-oss-20b"
+            },
+            "parent_agents": [
+                "Mind orchestration"
+            ]
+        }
+    ],
+    "tags": [],
+    "is_public": false,
+    "settings": {},
+    "template_id": null,
+    "default_llm_model": null,
+    "default_accelerator": null,
+    "sequence": [
+        [
+            "Mind orchestration"
+        ],
+        [
+            "MindDevelopment__001"
+        ]
+    ],
+    "owner": null,
+    "request": {},
+    "response_structure": {},
+    "created_at": null,
+    "modified_at": null,
+    "isOrg": false,
+    "teams": [],
+    "sharedWith": [],
+    "is_git_synced": false,
+    "type": "mind_orchestrator",
+    "reasoning": null,
+    "context": {},
+    "schedules": null,
+    "mind_type": null,
+    "schedule": null,
+    "_id": "1c806869-8ea7-4c99-bfa7-dfb4ed0957f8"
+}
