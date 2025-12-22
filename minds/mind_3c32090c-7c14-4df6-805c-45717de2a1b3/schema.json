@@ -8,7 +8,7 @@
         {
             "id": "ListOfTouristPlacesagent undefined",
             "input": {
-                "sql": "SELECT * FROM ",
+                "sql": "SELECT * FROM top_10_tourist_places_tamilnaduxlsx_7847ebbf;",
                 "dataset": "011bc83f-1256-4955-a103-b728cd311bdf",
                 "llm_model": "groq_openai/gpt-oss-120b"
             },
@@ -46,7 +46,7 @@
         }
     },
     "created_at": "2025-12-22 09:05:14.560000",
-    "modified_at": "2025-12-22 09:07:07.936000",
+    "modified_at": "2025-12-22 09:20:10.360000",
     "isOrg": false,
     "teams": [],
     "sharedWith": [],
