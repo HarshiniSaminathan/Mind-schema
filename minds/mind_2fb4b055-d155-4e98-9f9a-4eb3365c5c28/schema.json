@@ -1,21 +1,40 @@
 {
-    "id": null,
+    "id": "2fb4b055-d155-4e98-9f9a-4eb3365c5c28",
     "user_id": null,
     "name": "Tourist spots in Tamil Nadu",
     "description": "Tourist spots",
-    "folder_name": "Test",
+    "folder_name": "default",
     "agents": [
         {
-            "id": "mind_orchestrator",
-            "name": "Tourist spots in Tamil Nadu ",
+            "id": "Tourist spots in Tamil Nadu",
+            "name": "Tourist spots in Tamil Nadu",
             "operator": "Orchestrator",
             "input": {
                 "description": "Tourist spots",
+                "voice_provider": "hume",
                 "chat_system_prompt": " ",
-                "voice_system_prompt": " ",
-                "voice_provider": "hume"
+                "voice_system_prompt": " "
             },
             "parent_agents": []
+        },
+        {
+            "id": "ToursistSpotsInTamilNadunew_sub_agent_1",
+            "name": "Toursist spots in Tamil Nadu",
+            "operator": "SubAgent",
+            "input": {
+                "mind": "3c32090c-7c14-4df6-805c-45717de2a1b3",
+                "description": "List of tourist spots in tamil nadu",
+                "llm_model": ""
+            },
+            "parent_agents": [
+                "Tourist spots in Tamil Nadu"
+            ],
+            "isNew": true,
+            "output": {
+                "type": "markdown",
+                "content": "string"
+            },
+            "meta": {}
         }
     ],
     "tags": [],
@@ -26,7 +45,10 @@
     "default_accelerator": null,
     "sequence": [
         [
-            "mind_orchestrator"
+            "Tourist spots in Tamil Nadu"
+        ],
+        [
+            "ToursistSpotsInTamilNadunew_sub_agent_1"
         ]
     ],
     "owner": null,
@@ -43,5 +65,6 @@
     "context": {},
     "schedules": null,
     "mind_type": null,
-    "schedule": null
+    "schedule": null,
+    "_id": "2fb4b055-d155-4e98-9f9a-4eb3365c5c28"
 }
