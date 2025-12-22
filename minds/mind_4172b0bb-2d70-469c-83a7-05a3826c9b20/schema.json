@@ -1,0 +1,50 @@
+{
+    "id": null,
+    "user_id": null,
+    "name": "Famous food",
+    "description": "Famous food",
+    "folder_name": "Test",
+    "agents": [
+        {
+            "id": "FamousFood__001",
+            "input": {
+                "prompt": "List of top 10 famous food in TamilNadu",
+                "llm_model": "fireworks_mixtral-8x22b-instruct"
+            },
+            "meta": {},
+            "name": "Famous food",
+            "operator": "OpenSearch",
+            "output": {
+                "type": "markdown",
+                "content": "string"
+            },
+            "parent_agents": []
+        }
+    ],
+    "tags": [],
+    "is_public": false,
+    "settings": {},
+    "template_id": null,
+    "default_llm_model": null,
+    "default_accelerator": null,
+    "sequence": [
+        [
+            "FamousFood__001"
+        ]
+    ],
+    "owner": null,
+    "request": {},
+    "response_structure": {},
+    "created_at": null,
+    "modified_at": null,
+    "isOrg": false,
+    "teams": [],
+    "sharedWith": [],
+    "is_git_synced": false,
+    "type": "mind",
+    "reasoning": null,
+    "context": {},
+    "schedules": null,
+    "mind_type": null,
+    "schedule": null
+}
