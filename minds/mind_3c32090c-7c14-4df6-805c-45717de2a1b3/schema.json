@@ -8,14 +8,15 @@
         {
             "id": "ListOfTouristPlacesagent undefined",
             "input": {
-                "prompt": "List of top 10 the tourist places in Tamil Nadu",
+                "sql": "SELECT * FROM ",
+                "dataset": "011bc83f-1256-4955-a103-b728cd311bdf",
                 "llm_model": "groq_openai/gpt-oss-120b"
             },
             "meta": {},
             "name": "List of Tourist places",
-            "operator": "OpenSearch",
+            "operator": "SQLExecution",
             "output": {
-                "type": "markdown",
+                "type": "table",
                 "content": "string"
             },
             "parent_agents": []
@@ -45,7 +46,7 @@
         }
     },
     "created_at": "2025-12-22 09:05:14.560000",
-    "modified_at": "2025-12-22 09:05:14.560000",
+    "modified_at": "2025-12-22 09:07:07.936000",
     "isOrg": false,
     "teams": [],
     "sharedWith": [],
