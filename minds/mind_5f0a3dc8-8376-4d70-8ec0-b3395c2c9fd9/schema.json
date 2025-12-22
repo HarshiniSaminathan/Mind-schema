@@ -1,0 +1,47 @@
+{
+    "id": null,
+    "user_id": null,
+    "name": "Tourist spots in Tamil Nadu",
+    "description": "Tourist spots",
+    "folder_name": "Test",
+    "agents": [
+        {
+            "id": "mind_orchestrator",
+            "name": "Tourist spots in Tamil Nadu ",
+            "operator": "Orchestrator",
+            "input": {
+                "description": "Tourist spots",
+                "chat_system_prompt": " ",
+                "voice_system_prompt": " ",
+                "voice_provider": "hume"
+            },
+            "parent_agents": []
+        }
+    ],
+    "tags": [],
+    "is_public": false,
+    "settings": {},
+    "template_id": null,
+    "default_llm_model": null,
+    "default_accelerator": null,
+    "sequence": [
+        [
+            "mind_orchestrator"
+        ]
+    ],
+    "owner": null,
+    "request": {},
+    "response_structure": {},
+    "created_at": null,
+    "modified_at": null,
+    "isOrg": false,
+    "teams": [],
+    "sharedWith": [],
+    "is_git_synced": false,
+    "type": "mind_orchestrator",
+    "reasoning": null,
+    "context": {},
+    "schedules": null,
+    "mind_type": null,
+    "schedule": null
+}
