@@ -1,0 +1,50 @@
+{
+    "id": null,
+    "user_id": null,
+    "name": "Tourist places",
+    "description": "Tourist places",
+    "folder_name": "Test",
+    "agents": [
+        {
+            "id": "ListOfTouristPlacesagent undefined",
+            "input": {
+                "prompt": "List all the tourist places in Tamil Nadu",
+                "llm_model": "groq_openai/gpt-oss-120b"
+            },
+            "meta": {},
+            "name": "List of Tourist places",
+            "operator": "OpenSearch",
+            "output": {
+                "type": "markdown",
+                "content": "string"
+            },
+            "parent_agents": []
+        }
+    ],
+    "tags": [],
+    "is_public": false,
+    "settings": {},
+    "template_id": null,
+    "default_llm_model": null,
+    "default_accelerator": null,
+    "sequence": [
+        [
+            "ListOfTouristPlacesagent undefined"
+        ]
+    ],
+    "owner": null,
+    "request": {},
+    "response_structure": {},
+    "created_at": null,
+    "modified_at": null,
+    "isOrg": false,
+    "teams": [],
+    "sharedWith": [],
+    "is_git_synced": false,
+    "type": "mind",
+    "reasoning": null,
+    "context": {},
+    "schedules": null,
+    "mind_type": null,
+    "schedule": null
+}
