@@ -1,0 +1,50 @@
+{
+    "id": null,
+    "user_id": null,
+    "name": "DEC 22, 12:06 - Mindorc 001 mind",
+    "description": "DEC 22, 12:06 - Mindorc 001 mind",
+    "folder_name": "Test Folder",
+    "agents": [
+        {
+            "id": "Agent1__001",
+            "input": {
+                "prompt": "what is the current sales, menu items data of KFC india",
+                "llm_model": "fireworks_mixtral-8x22b-instruct"
+            },
+            "meta": {},
+            "name": "agent1",
+            "operator": "OpenSearch",
+            "output": {
+                "type": "markdown",
+                "content": "string"
+            },
+            "parent_agents": []
+        }
+    ],
+    "tags": [],
+    "is_public": false,
+    "settings": {},
+    "template_id": null,
+    "default_llm_model": null,
+    "default_accelerator": null,
+    "sequence": [
+        [
+            "Agent1__001"
+        ]
+    ],
+    "owner": null,
+    "request": {},
+    "response_structure": {},
+    "created_at": null,
+    "modified_at": null,
+    "isOrg": false,
+    "teams": [],
+    "sharedWith": [],
+    "is_git_synced": false,
+    "type": "mind",
+    "reasoning": null,
+    "context": {},
+    "schedules": null,
+    "mind_type": null,
+    "schedule": null
+}
