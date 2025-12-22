@@ -1,21 +1,40 @@
 {
-    "id": null,
+    "id": "6a0bb03e-1d4c-4de7-9eff-7b19f166fbe1",
     "user_id": null,
     "name": "Dec 22",
     "description": "this is to test the share v2",
-    "folder_name": "test folder",
+    "folder_name": "default",
     "agents": [
         {
-            "id": "mind_orchestrator",
+            "id": "Dec 22",
             "name": "Dec 22",
             "operator": "Orchestrator",
             "input": {
-                "description": "this is to test the share v2 ",
+                "description": "this is to test the share v2",
+                "voice_provider": "hume",
                 "chat_system_prompt": "hey hello chat assistant, get data from the minds connected and respond",
-                "voice_system_prompt": "hey  voice assistant, get data from the minds connected and respond",
-                "voice_provider": "hume"
+                "voice_system_prompt": "hey  voice assistant, get data from the minds connected and respond"
             },
             "parent_agents": []
+        },
+        {
+            "id": "Mind-1__001",
+            "name": "Mind-1",
+            "operator": "SubAgent",
+            "input": {
+                "mind": "6fae796d-51ac-4298-a517-e20e4af30dda",
+                "description": "this is a test description",
+                "llm_model": ""
+            },
+            "parent_agents": [
+                "Dec 22"
+            ],
+            "isNew": true,
+            "output": {
+                "type": "markdown",
+                "content": "string"
+            },
+            "meta": {}
         }
     ],
     "tags": [],
@@ -26,7 +45,10 @@
     "default_accelerator": null,
     "sequence": [
         [
-            "mind_orchestrator"
+            "Dec 22"
+        ],
+        [
+            "Mind-1__001"
         ]
     ],
     "owner": null,
@@ -43,5 +65,6 @@
     "context": {},
     "schedules": null,
     "mind_type": null,
-    "schedule": null
+    "schedule": null,
+    "_id": "6a0bb03e-1d4c-4de7-9eff-7b19f166fbe1"
 }
