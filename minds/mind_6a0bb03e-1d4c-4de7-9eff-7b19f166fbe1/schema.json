@@ -1,0 +1,47 @@
+{
+    "id": null,
+    "user_id": null,
+    "name": "Dec 22",
+    "description": "this is to test the share v2",
+    "folder_name": "test folder",
+    "agents": [
+        {
+            "id": "mind_orchestrator",
+            "name": "Dec 22",
+            "operator": "Orchestrator",
+            "input": {
+                "description": "this is to test the share v2 ",
+                "chat_system_prompt": "hey hello chat assistant, get data from the minds connected and respond",
+                "voice_system_prompt": "hey  voice assistant, get data from the minds connected and respond",
+                "voice_provider": "hume"
+            },
+            "parent_agents": []
+        }
+    ],
+    "tags": [],
+    "is_public": false,
+    "settings": {},
+    "template_id": null,
+    "default_llm_model": null,
+    "default_accelerator": null,
+    "sequence": [
+        [
+            "mind_orchestrator"
+        ]
+    ],
+    "owner": null,
+    "request": {},
+    "response_structure": {},
+    "created_at": null,
+    "modified_at": null,
+    "isOrg": false,
+    "teams": [],
+    "sharedWith": [],
+    "is_git_synced": false,
+    "type": "mind_orchestrator",
+    "reasoning": null,
+    "context": {},
+    "schedules": null,
+    "mind_type": null,
+    "schedule": null
+}
