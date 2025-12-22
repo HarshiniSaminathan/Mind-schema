@@ -1,5 +1,5 @@
 {
-    "id": null,
+    "id": "6fae796d-51ac-4298-a517-e20e4af30dda",
     "user_id": null,
     "name": "DEC 22, 12:06 - Mindorc 001 mind",
     "description": "DEC 22, 12:06 - Mindorc 001 mind",
@@ -19,32 +19,59 @@
                 "content": "string"
             },
             "parent_agents": []
+        },
+        {
+            "id": "Colelctionshare__002",
+            "input": {
+                "prompt": "test collection within minds",
+                "collection": "1cdd956c-f41f-4de6-9ddb-50d9bc16afd0",
+                "llm_model": "fireworks_mixtral-8x22b-instruct"
+            },
+            "meta": {},
+            "name": "colelctionshare",
+            "operator": "RAGSummarize",
+            "output": {
+                "type": "markdown",
+                "content": "string"
+            },
+            "parent_agents": []
         }
     ],
     "tags": [],
     "is_public": false,
     "settings": {},
     "template_id": null,
-    "default_llm_model": null,
-    "default_accelerator": null,
+    "default_llm_model": "llama3-8b-8192",
+    "default_accelerator": "groq",
     "sequence": [
         [
-            "Agent1__001"
+            "Agent1__001",
+            "Colelctionshare__002"
         ]
     ],
-    "owner": null,
-    "request": {},
-    "response_structure": {},
-    "created_at": null,
-    "modified_at": null,
+    "owner": "4b2e6ff85db8c171d1ba7da472cf9158d744a596da2709c06b4322500181b52b",
+    "request": {
+        "arguments": []
+    },
+    "response_structure": {
+        "api": {},
+        "ui": {
+            "type": "tabs",
+            "tabs": [],
+            "content": {}
+        }
+    },
+    "created_at": "2025-12-22 06:41:43.502000",
+    "modified_at": "2025-12-22 06:41:43.502000",
     "isOrg": false,
     "teams": [],
     "sharedWith": [],
-    "is_git_synced": false,
+    "is_git_synced": true,
     "type": "mind",
     "reasoning": null,
     "context": {},
     "schedules": null,
     "mind_type": null,
-    "schedule": null
+    "schedule": null,
+    "_id": "6fae796d-51ac-4298-a517-e20e4af30dda"
 }
